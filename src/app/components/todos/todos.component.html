@@ -1,3 +1,6 @@
-<app-task-list *ngFor="let item of listOfTaskList"
-  [taskList]="item"
-></app-task-list>
+<div class="row">
+  <app-task-list *ngFor="let item of listOfTaskList"
+    [taskList]="item"
+     class="col"
+  ></app-task-list>
+</div>
