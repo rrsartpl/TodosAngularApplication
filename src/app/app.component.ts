@@ -19,6 +19,7 @@ export class AppComponent {
 
   ngOnInit() {
     this.data$ = this.dataService.getData();
+    this.dataService.loadData();
     // this.dataService.getData().subscribe((data) => {
     //   this.data = data;
     // });
