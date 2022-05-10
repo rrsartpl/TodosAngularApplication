@@ -6,7 +6,7 @@ export class TaskListModel {
   tasks: TaskModel[];
   type: TaskTypeEnum;
 
-  constructor(opts: Partial<TaskListModel>) {
+  constructor(opts?: Partial<TaskListModel>) {
     opts = opts || {};
     this.title = opts.title || '';
     this.tasks = opts.tasks || [];
