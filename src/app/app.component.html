@@ -1,7 +1,7 @@
-<h2>{{title}}</h2>
+<h2 class="text-center mt-1 mb-3">{{title}}</h2>
 
 <div class="container">
   <app-todos
-    [listOfTaskList]="data"
+    [listOfTaskList]="data$ | async"
   ></app-todos>
 </div>

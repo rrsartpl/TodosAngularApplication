@@ -8,7 +8,7 @@ import {TaskListModel} from "../../models/task-list-model";
 })
 export class TodosComponent implements OnInit {
 
-  @Input() listOfTaskList: TaskListModel[] = [];
+  @Input() listOfTaskList: TaskListModel[] | null = null;
 
   constructor() { }
 
