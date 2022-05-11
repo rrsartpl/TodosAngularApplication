@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from "@angular/forms";
 import {DataService} from "../../services/data.service";
+import {TaskModel} from "../../models/task-model";
 
 @Component({
   selector: 'app-add-task',
@@ -19,7 +20,10 @@ export class AddTaskComponent implements OnInit {
     console.log('value', form.value);
 
     if (form.valid) {
-
+      this.dataService.addTask(new TaskModel(form.value))
+        .subscribe((result) => {
+          console.log('save in database:', result);
+        });
     }
   }
 

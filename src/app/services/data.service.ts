@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {TaskListModel} from "../models/task-list-model";
 import {TaskModel} from "../models/task-model";
 import {TaskTypeEnum} from "../models/task-type-enum";
-import {catchError, Observable, of, Subject, tap} from "rxjs";
+import {catchError, map, Observable, of, Subject, tap} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 
 @Injectable({
@@ -58,5 +58,17 @@ export class DataService {
           doneList,
         ])
       });
+  }
+
+  addTask(task: TaskModel): Observable<boolean> {
+    return this.httpClient
+      .post(this.URL, task)
+      .pipe(
+        map(() => true),
+        catchError((err) => {
+          console.error(err);
+          return of(false);
+        }),
+      );
   }
 }
