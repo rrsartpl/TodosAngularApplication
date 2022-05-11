@@ -10,6 +10,8 @@ import {HttpClient} from "@angular/common/http";
 })
 export class DataService {
 
+  private readonly URL = 'http://localhost:3000/tasks';
+
   private data$ = new Subject<TaskListModel[]>();
 
   constructor(private httpClient: HttpClient) { }
@@ -20,7 +22,7 @@ export class DataService {
 
   loadData() {
     this.httpClient
-      .get<TaskModel[]>('./assets/data.json')
+      .get<TaskModel[]>(this.URL)
       .pipe(
         tap((data) => console.log(data)),
         catchError((err) => {
