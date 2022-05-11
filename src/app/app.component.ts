@@ -10,18 +10,4 @@ import {Observable} from "rxjs";
 })
 export class AppComponent {
   title = 'Todos Application with Angular';
-
-  // data: TaskListModel[] = [];
-  data$: Observable<TaskListModel[]> | undefined;
-
-  constructor(private dataService: DataService) {
-  }
-
-  ngOnInit() {
-    this.data$ = this.dataService.getData();
-    this.dataService.loadData();
-    // this.dataService.getData().subscribe((data) => {
-    //   this.data = data;
-    // });
-  }
 }

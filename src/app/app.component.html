@@ -1,7 +1,11 @@
 <h2 class="text-center mt-1 mb-3">{{title}}</h2>
 
 <div class="container">
-  <app-todos
-    [listOfTaskList]="data$ | async"
-  ></app-todos>
+  <div class="row">
+    <div class="col mb-3 text-center">
+      <a routerLink="hello">Hello</a> |
+      <a routerLink="todos">Todo List</a>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
 </div>
