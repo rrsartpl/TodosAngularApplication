@@ -8,10 +8,13 @@ import { TodosComponent } from './components/todos/todos.component';
 import {HttpClientModule} from "@angular/common/http";
 import {RouterModule, Routes} from "@angular/router";
 import { HelloComponent } from './components/hello/hello.component';
+import { AddTaskComponent } from './components/add-task/add-task.component';
+import {FormsModule} from "@angular/forms";
 
 const routes: Routes = [
   { path: 'todos', component: TodosComponent },
   { path: 'hello', component: HelloComponent },
+  { path: 'add-task', component: AddTaskComponent },
   { path: '', pathMatch: 'full', redirectTo: 'todos' },
 ];
 
@@ -21,12 +24,14 @@ const routes: Routes = [
     TaskComponent,
     TaskListComponent,
     TodosComponent,
-    HelloComponent
+    HelloComponent,
+    AddTaskComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
